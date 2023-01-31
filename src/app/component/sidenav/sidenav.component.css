@@ -1,0 +1,57 @@
+:host .mat-icon {
+    vertical-align: middle;
+    margin-right: 1rem;
+    
+}
+
+h1{
+    color: white;
+    text-align: center;
+}
+
+.logo {
+    text-align: center;
+    padding: 0rem 0rem;
+}
+
+.logo img {
+    border-radius: 5rem;
+    width: 100px;
+    height: 100px;
+}
+
+.mat-divider {
+    border-top-width: 4px;
+    border-color: white;
+}
+
+.mat-list-item {
+    color:white;
+    font-size: 0.8rem;
+    height: 44px;
+    margin-bottom: 4px;
+    
+}
+
+.mat-list-item:hover {
+    color: #f2f5f7;
+}
+
+.mat-list-item ::ng-deep .mat-list-item-content {
+    border-radius: 5px;
+    margin: 0 8px;
+}
+
+.mat-list-item  {
+    color: white;
+}
+.mat-subheader {
+    color: white;
+    font-size: 0.6rem;
+    font-weight: 100;
+    letter-spacing: 1px;
+}
+a{
+    color: white;
+    background-color:bisque;
+}

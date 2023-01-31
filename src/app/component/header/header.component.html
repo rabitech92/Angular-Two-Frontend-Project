@@ -1,0 +1,42 @@
+<mat-toolbar>
+  <mat-toolbar-row class="justify-content-between">
+    <button mat-icon-button (click)="toggleSidebar()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    
+    <div class="row mr-2 ml-auto">
+      <ul class="row m-0 align-items-center">
+        <li>
+          
+          <button mat-button [matMenuTriggerFor]="menu" class="user mt-2 d-flex align-items-center">
+            <img src="assets/images/Rabiul.png" alt="" class="user-image mr-1 p-2" />
+
+            Rabiul Islam
+            <mat-icon class="user-image-icon ml-1">keyboard_arrow_down</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item>
+              <mat-icon>exit_to_app</mat-icon>
+              Logout
+            </button>
+          </mat-menu>
+        </li>
+      </ul>
+    </div>
+  </mat-toolbar-row>
+
+  <div class="form-row">
+    <button type="button" class="btn btn-danger">
+      Notifications <span class="badge badge-light">4</span>
+    </button>
+    <div class="col-2">
+      <button class="btn btn-secondary" type="button" data-toggle="dropdown" aria-expanded="false">
+        Customer
+      </button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item"  href="#">Sing-up</a>
+        <a class="dropdown-item" href="#">Sing in</a>
+    </div>
+  </div>
+  </div>
+</mat-toolbar>
