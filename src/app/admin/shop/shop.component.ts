@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-shop',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./shop.component.css']
 })
 export class ShopComponent {
+  addform!:[FormGroup]
 
 }

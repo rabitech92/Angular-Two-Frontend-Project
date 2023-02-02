@@ -4,7 +4,8 @@ import { AccounceComponent } from './admin/accounce/accounce.component';
 import { CustomerComponent } from './admin/customer/customer.component';
 import { ProductComponent } from './admin/product/product.component';
 import { ProductlistComponent } from './admin/productlist/productlist.component';
-import { SellerComponent } from './admin/seller/seller.component';
+
+
 import { ShopComponent } from './admin/shop/shop.component';
 import { StockComponent } from './admin/stock/stock.component';
 import { UserComponent } from './admin/user/user.component';
@@ -20,7 +21,8 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: 'login', component: LoginComponent },
   { path: 'product', component: ProductComponent },
-  { path: 'seller', component: SellerComponent },
+  
+  
   { path: 'stock', component: StockComponent },
   {path :'shop', component:ShopComponent},
   {path :'productlist', component:ProductlistComponent},
