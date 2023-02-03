@@ -9,7 +9,7 @@ import { Seller } from '../model/Seller.model';
 })
 export class SellerService {
   
- url ="http://localhost:3000/seller";
+  private url = 'http://localhost:8080/api/';  
  
 
   constructor(private httpClient: HttpClient) { }
