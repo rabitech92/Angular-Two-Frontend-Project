@@ -4,6 +4,7 @@ import { AccounceComponent } from './admin/accounce/accounce.component';
 import { CustomerComponent } from './admin/customer/customer.component';
 import { ProductComponent } from './admin/product/product.component';
 import { ProductlistComponent } from './admin/productlist/productlist.component';
+import { SellerComponent } from './admin/seller/seller.component';
 
 
 import { ShopComponent } from './admin/shop/shop.component';
@@ -31,6 +32,7 @@ const routes: Routes = [
   {path :'delivary', component:DelivaryComponent},
   {path :'order', component:OrderComponent},
   {path :'user', component:UserComponent},
+  {path :'seller', component:SellerComponent},
   
 
 

@@ -1,8 +1,8 @@
 export class Seller{
       public  id:any;
-      public  userType!:string;
+      public  UserType!:string;
       public  UserName!:string;
-      public  fatherName!:string;
+      public  FatherName!:string;
       public  UsemotherName!:string;
       public  dOfBirth!:Date;
       public  address!:string;

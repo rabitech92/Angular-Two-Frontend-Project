@@ -32,6 +32,7 @@ import { OrderComponent } from './component/order/order.component';
 import { UserComponent } from './admin/user/user.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { SellerComponent } from './admin/seller/seller.component';
 
 
 
@@ -54,6 +55,7 @@ import { HttpClientModule } from '@angular/common/http';
     DelivaryComponent,
     OrderComponent,
     UserComponent,
+    SellerComponent,
     
 
     
