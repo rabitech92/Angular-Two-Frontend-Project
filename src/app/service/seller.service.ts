@@ -1,7 +1,8 @@
 import {HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, Observable, throwError } from 'rxjs';
-import { Seller } from '../model/Seller.model';
+import { addSeller } from '../model/addSeller.model';
+
 
 
 @Injectable({
@@ -9,57 +10,38 @@ import { Seller } from '../model/Seller.model';
 })
 export class SellerService {
   
-  private url = 'http://localhost:8080/api/seller';  
+  private baseUrl = 'http://localhost:8080/api';  
  
 
-  constructor(private httpClient: HttpClient) { }
-
+  constructor(private http: HttpClient) { }
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json'
     })
   }
- 
- 
-  create(seller:Seller): Observable<any> {
-  return this.httpClient.post(`${this.url}/save`, JSON.stringify(seller), this.httpOptions)
-  .pipe(
-    catchError(this.errorHandler)
-    )
+
+
+  create(cat: addSeller) : Observable<any>{  
+    return this.http.post<addSeller>(this.baseUrl  + '/save',cat,this.httpOptions).
+    pipe(
+      catchError(this.errorHandler)
+    );  
+  }
+  getAll() {  
+    return this.http.get<addSeller[]>(this.baseUrl +"/getAll");  
   }  
+  delete(id: number) {  
+    return this.http.delete<addSeller>(this.baseUrl + "/delete/" + id); 
 
-  getAll():Observable<any>{
-    return this.httpClient.get(this.url + '/posts')
-  
-    .pipe(
-      catchError(this.errorHandler)
-    )
-  }
+  }  
+  getById(id: number) {  
+    return this.http.get<addSeller>(this.baseUrl + "/get/" + id);  
 
-  find(id:number): Observable<any> {
-    return this.httpClient.get(this.url + '/posts/' + id)
-    .pipe(
-      catchError(this.errorHandler)
-    )
-  }
+  } 
 
-  update(id:number, seller:Seller): Observable<any> {  
-    return this.httpClient.put(this.url + '/update/' + id, JSON.stringify(seller), this.httpOptions)
-     .pipe( 
-      catchError(this.errorHandler)
-    )
-  }
-
-  delete(id:number){
-    return this.httpClient.delete(this.url + '/delete/' + id, this.httpOptions)
-    .pipe(
-      catchError(this.errorHandler)
-    )
-  }
-
-
-
-  
+  update(cat: addSeller) {  
+    return this.http.put(this.baseUrl + "/update", cat);  
+  }  
   errorHandler(error:any) {
     let errorMessage = '';
     if(error.error instanceof ErrorEvent) {
@@ -68,5 +50,5 @@ export class SellerService {
       errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
     }
     return throwError(errorMessage);
- }
+  }
 }
