@@ -1,5 +1,5 @@
 export class addSeller{
-    public  id:any;
+      public  id:any;
       public  userType!:string;
       public  userName!:string;
       public  fatherName!:string;
