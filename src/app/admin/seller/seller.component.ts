@@ -59,19 +59,19 @@ export class SellerComponent implements OnInit {
 
 
 
-  delete(product: addSeller): void {  
-    this.sellerService.delete(product.id)  
+  delete(addseller: addSeller): void {  
+    this.sellerService.delete(addseller.id)  
       .subscribe(data =>{  
         this.ngOnInit();
         
       })  
   }
 
-  editEmp(product: addSeller): void {
+  editEmp(addseller: addSeller): void {
 
     localStorage.removeItem('proId');  
     // let proid = 0;
-    localStorage.setItem('proId', product.id.toString());
+    localStorage.setItem('proId', addseller.id.toString());
     let proid: any = localStorage.getItem('proId'); 
     if (+proid > 0) {  
       this.sellerService.getById(+proid).subscribe(
