@@ -1,74 +1,50 @@
-<!DOCTYPE html>
-<html>
-<div class="customer-aut">
-  <div class="sign-up">
-    <div class="card bg-light">
-      <article class="card-body mx-auto" style="max-width: 400px;">
-        <div class="card-header bg-primary text-white">
-          <h2 class="card-title mt-3 text-center">Create Customer Account</h2>
+<div class="container-fluid">
+    <div>
+        <div class="container-fluid" style="background-color: blueviolet; color: white; text-align: center;">
+            <h2>Customer Form</h2>
         </div>
-
-        <p class="divider-text">
-          <span class="bg-light text-center  text-primary">OR</span>
-        </p>
-        <form [FormGroup]="addForm">
-
-          
-
-          <div class="form-group input-group">
-            <div class="input-group-prepend">
-              <span class="input-group-text"> <i class="fa fa-user"></i> </span>
-            </div>
-            <input name="" class="form-control" placeholder="Full Name" type="text">
-          </div> <!-- form-group// -->
-      
-
-          <div class="form-group input-group">
-            <div class="input-group-prepend">
-              <span class="input-group-text"> <i class="fa fa-user"></i> </span>
-            </div>
-            <input name="" class="form-control" placeholder="Address" type="text">
-          </div> <!-- form-group// -->
-
-          <div class="form-group input-group">
-            <div class="input-group-prepend">
-              <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
-            </div>
-            <select class="custom-select" style="max-width: 120px;">
-              <option selected="">0171</option>
-              <option value="1">0191</option>
-              <option value="2">0167</option>
-              <option value="3">1764</option>
-            </select>
-            <input name="" class="form-control" placeholder="Phone number" type="text">
-          </div> <!-- form-group// -->
-
-          <div class="form-group input-group">
-            <div class="input-group-prepend">
-              <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
-            </div>
-            <input class="form-control" placeholder="Create password" type="password">
-          </div> <!-- form-group// -->
-
-          <div class="form-group input-group">
-            <div class="input-group-prepend">
-              <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
-            </div>
-            <input class="form-control" placeholder="Repeat password" type="password">
-          </div> <!-- form-group// -->
-
-          <div class="form-group">
-            <button type="submit" class="btn btn-primary btn-block"> Create Account </button>
-          </div> <!-- form-group// -->
-
-          <p class="text-center text-primary">Have an account? <a href="#">Log In</a> </p>
+        <form [formGroup]="addForm" class="col-8 center">
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                </div>
+                <input name="" class="form-control" placeholder="Full Name" type="text">
+            </div> <!-- form-group// -->
+        
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                </div>
+                <input name="" class="form-control" placeholder="Address" type="text">
+            </div> <!-- form-group// -->
+        
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
+                </div>
+                <input name="" class="form-control" placeholder="Phone number" type="text">
+            </div> <!-- form-group// -->
+        
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                </div>
+                <input class="form-control" placeholder="Create password" type="password">
+            </div> <!-- form-group// -->
+        
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                </div>
+                <input class="form-control" placeholder="Repeat password" type="password">
+            </div> <!-- form-group// -->
+        
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-block"> Create Account </button>
+            </div> <!-- form-group// -->
+        
+            <p class="text-center text-primary">Have an account? <a href="#">Log In</a> </p>
         </form>
-      </article>
-    </div> <!-- card.// -->
-
-
-  </div>
+    </div>
 
 </div>
-
-</html>

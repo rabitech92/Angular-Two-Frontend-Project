@@ -33,6 +33,8 @@ import { UserComponent } from './admin/user/user.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { SellerComponent } from './admin/seller/seller.component';
+import { CustomerComponent } from './admin/customer/customer.component';
+
 
 
 
@@ -56,6 +58,11 @@ import { SellerComponent } from './admin/seller/seller.component';
     OrderComponent,
     UserComponent,
     SellerComponent,
+    CustomerComponent,
+    
+
+    
+    
     
 
     

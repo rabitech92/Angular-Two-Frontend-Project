@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 
 @Component({
@@ -6,11 +6,7 @@ import { FormGroup } from '@angular/forms';
   templateUrl: './customer.component.html',
   styleUrls: ['./customer.component.css']
 })
-export class CustomerComponent implements OnInit {
-addForm!:FormGroup;
-
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
-  }
+export class CustomerComponent {
+  addForm!:FormGroup
 
 }
