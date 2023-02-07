@@ -50,12 +50,11 @@ export class SellerComponent implements OnInit {
   }
 
   add(){
-    console.warn(this.addForm.value)
     this.sellerService.create(this.addForm.value).subscribe(data=>{
       this.ngOnInit();
      
-     })
-  };
+     });
+  }
 
 
 

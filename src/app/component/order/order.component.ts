@@ -5,23 +5,23 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './order.component.html',
   styleUrls: ['./order.component.css']
 })
-export class OrderComponent implements OnInit{
+export class OrderComponent {
 
-  post='';
-  parentPost: any[] = []; 
-  text: string = '';
-  constructor(){}
-  ngOnInit() {
-  }
+  // post='';
+  // parentPost: any[] = []; 
+  // text: string = '';
+  // constructor(){}
+  // ngOnInit() {
+  // }
 
-  addPost(post: any){
-    console.log(post);
-    this.parentPost.push(post);
+  // addPost(post: any){
+  //   console.log(post);
+  //   this.parentPost.push(post);
 
-  }
+  // }
 
-  childEvent(data:any){
-    this.text = data;
-    alert( this.text)
-  }
+  // childEvent(data:any){
+  //   this.text = data;
+  //   alert( this.text)
+  // }
 }

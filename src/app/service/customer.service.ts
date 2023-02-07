@@ -26,11 +26,11 @@ export class CustomerService {
   getAll() {  
     return this.http.get<addCustomer[]>(this.baseUrl +"/getAll");  
   }  
-  delete(id: number) {  
+  delete(id: any) {  
     return this.http.delete<addCustomer>(this.baseUrl + "/delete/" + id); 
 
   }  
-  getById(id: number) {  
+  getById(id: any) {  
     return this.http.get<addCustomer>(this.baseUrl + "/get/" + id);  
 
   } 
