@@ -1,5 +1,5 @@
 export class addCustomer{
-       public  id:any;
+       public  id!:number;
       public  name!:string;
       public  address!:string;
       public  phone!:string;

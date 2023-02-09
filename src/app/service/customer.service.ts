@@ -17,26 +17,26 @@ export class CustomerService {
       'Content-Type': 'application/json'
     })
   }
-  createCus(cus: addCustomer) : Observable<any>{  
-    return this.http.post<addCustomer>(this.baseUrl  + '/save',cus,this.httpOptions).
+  createCus(cus: any) : Observable<any>{  
+    return this.http.post<addCustomer>(this.baseUrl  + '/cussave',cus,this.httpOptions).
     pipe(
       catchError(this.errorHandler)
     );  
   }
   getAllCus() {  
-    return this.http.get<addCustomer[]>(this.baseUrl +"/getAll");  
+    return this.http.get<addCustomer[]>(this.baseUrl +"/cusgetAll");  
   }  
   deleteCus(id: any) {  
-    return this.http.delete<addCustomer>(this.baseUrl + "/delete/" + id); 
+    return this.http.delete<addCustomer>(this.baseUrl + "/cusdelete/" + id); 
 
   }  
   getByIdCus(id: any) {  
-    return this.http.get<addCustomer>(this.baseUrl + "/get/" + id);  
+    return this.http.get<addCustomer>(this.baseUrl + "/cusget/" + id);  
 
   } 
 
   updateCus(cus: addCustomer) {  
-    return this.http.put(this.baseUrl + "/update", cus);  
+    return this.http.put(this.baseUrl + "/cusupdate", cus);  
   }  
   errorHandler(error:any) {
     let errorMessage = '';

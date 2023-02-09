@@ -35,6 +35,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { SellerComponent } from './admin/seller/seller.component';
 import { CustomerComponent } from './admin/customer/customer.component';
 import { InvoiceComponent } from './admin/invoice/invoice.component';
+import { PaymentComponent } from './admin/payment/payment.component';
+import { FooterComponent } from './component/footer/footer.component';
 
 
 
@@ -61,6 +63,8 @@ import { InvoiceComponent } from './admin/invoice/invoice.component';
     SellerComponent,
     CustomerComponent,
     InvoiceComponent,
+    PaymentComponent,
+    FooterComponent,
     
 
     
