@@ -21,33 +21,33 @@ export class SellerService {
   }
 
 
-  create(cat: addSeller) : Observable<any>{  
-    return this.http.post<addSeller>(this.baseUrl  + '/save',cat,this.httpOptions).
+  createSell(sell: addSeller) : Observable<any>{  
+    return this.http.post<addSeller>(this.baseUrl  + '/save',sell,this.httpOptions).
     pipe(
       catchError(this.errorHandler)
     );  
   }
-  getAll() {  
+  getAllSell() {  
     return this.http.get<addSeller[]>(this.baseUrl +"/getAll");  
   }  
-  delete(id: number) {  
+  deleteSell(id: number) {  
     return this.http.delete<addSeller>(this.baseUrl + "/delete/" + id); 
 
   }  
-  getById(id: number) {  
+  getByIdSell(id: number) {  
     return this.http.get<addSeller>(this.baseUrl + "/get/" + id);  
 
   } 
 
-  update(cat: addSeller) {  
-    return this.http.put(this.baseUrl + "/update", cat);  
+  updateSell(sell: addSeller) {  
+    return this.http.put(this.baseUrl + "/update", sell);  
   }  
   errorHandler(error:any) {
     let errorMessage = '';
     if(error.error instanceof ErrorEvent) {
       errorMessage = error.error.message;
     } else {
-      errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
+      errorMessage = `Error Code: ${error.status}\Message: ${error.message}`;
     }
     return throwError(errorMessage);
   }

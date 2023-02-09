@@ -3,7 +3,7 @@
         <div class="container-fluid" style="background-color: blueviolet; color: white; text-align: center;">
             <h2>Customer Form</h2>
         </div>
-        <form [formGroup]="addForm" class="col-8 center" (ngSubmit)="addCus()">
+        <form [formGroup]="addCustom" class="col-8 center" (ngSubmit)="addCus()">
             <div class="form-group input-group">
                 <div class="input-group-prepend">
                     <span class="input-group-text"> <i class="fa fa-user"></i> </span>
@@ -29,14 +29,14 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
                 </div>
-                <input class="form-control" placeholder="Create password" type="password" formControlName="password">
+                <input class="form-control" placeholder="Create password" type="text" formControlName="password">
             </div> <!-- form-group// -->
         
             <div class="form-group input-group">
                 <div class="input-group-prepend">
                     <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
                 </div>
-                <input class="form-control" placeholder="Repeat password" type="password" formControlName="password">
+                <input class="form-control" placeholder="Repeat password" type="repassword" formControlName="repassword">
             </div> <!-- form-group// -->
         
             <div class="form-group">
@@ -51,7 +51,7 @@
 
 </div>
 <table class="table">
-    <thead style="background-color: blueviolet;padding: 2px;">
+    <thead style="background-color: blueviolet;padding: 2px;color: white;">
         <tr>
             <td>ID</td>
             <td>Name</td>
@@ -63,13 +63,13 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let cus of custom" class="mb-2">
+        <tr *ngFor="let cus of custom" class="mb-4">
             <td>{{cus.id}}</td>
             <td>{{cus.name}}</td>
             <td>{{cus.address}}</td>
             <td>{{cus.phone}}</td>
             <td>{{cus.password}}</td>
-            <td style="text-align: center;"> <button class="btn btn-info" (click)="edit(cus)">Update</button>&nbsp;<button class="btn btn-danger"   (click)="DeleteCus(cus)">Delete</button> </td>
+            <td style="text-align: center;"> <button class="btn btn-info" (click)="editcustom(cus)">Update</button>&nbsp;<button class="btn btn-danger"(click)="DeleteCus(cus)">Delete</button> </td>
 
         </tr>
         

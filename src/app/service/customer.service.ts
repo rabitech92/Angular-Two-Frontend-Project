@@ -8,7 +8,7 @@ import { addCustomer } from '../model/addCustomer.model';
 })
 export class CustomerService {
 
-  private baseUrl = 'http://localhost:8080/apa';
+  private baseUrl = 'http://localhost:8080/api';
 
   
   constructor(private http: HttpClient) { }
@@ -17,26 +17,26 @@ export class CustomerService {
       'Content-Type': 'application/json'
     })
   }
-  create(cat: addCustomer) : Observable<any>{  
-    return this.http.post<addCustomer>(this.baseUrl  + '/save',cat,this.httpOptions).
+  createCus(cus: addCustomer) : Observable<any>{  
+    return this.http.post<addCustomer>(this.baseUrl  + '/save',cus,this.httpOptions).
     pipe(
       catchError(this.errorHandler)
     );  
   }
-  getAll() {  
+  getAllCus() {  
     return this.http.get<addCustomer[]>(this.baseUrl +"/getAll");  
   }  
-  delete(id: any) {  
+  deleteCus(id: any) {  
     return this.http.delete<addCustomer>(this.baseUrl + "/delete/" + id); 
 
   }  
-  getById(id: any) {  
+  getByIdCus(id: any) {  
     return this.http.get<addCustomer>(this.baseUrl + "/get/" + id);  
 
   } 
 
-  update(cat: addCustomer) {  
-    return this.http.put(this.baseUrl + "/update", cat);  
+  updateCus(cus: addCustomer) {  
+    return this.http.put(this.baseUrl + "/update", cus);  
   }  
   errorHandler(error:any) {
     let errorMessage = '';

@@ -35,22 +35,22 @@ export class SellerComponent implements OnInit {
       phone: new FormControl('', Validators.required),
     });
 
-    this.sellerService.getAll().subscribe((data:addSeller[])=>{
+    this.sellerService.getAllSell().subscribe((data:addSeller[])=>{
       this.selle= data;
-      console.log('All Data--',this.selle)
+      
     });
 
 
   }
 
-  getall(){
-    this.sellerService.getAll().subscribe((data:addSeller[])=>{
+  getallSeller(){
+    this.sellerService.getAllSell().subscribe((data:addSeller[])=>{
       this.selle= data;
     });
   }
 
-  add(){
-    this.sellerService.create(this.addForm.value).subscribe(data=>{
+  addSeller(){
+    this.sellerService.createSell(this.addForm.value).subscribe(data=>{
       this.ngOnInit();
      
      });
@@ -58,22 +58,22 @@ export class SellerComponent implements OnInit {
 
 
 
-  delete(addseller: addSeller): void {  
-    this.sellerService.delete(addseller.id)  
+  deleteSeller(addseller: addSeller): void {  
+    this.sellerService.deleteSell(addseller.id)  
       .subscribe(data =>{  
         this.ngOnInit();
         
       })  
   }
 
-  editEmp(addseller: addSeller): void {
+  editSeller(addseller: addSeller): void {
 
-    localStorage.removeItem('proId');  
+    localStorage.removeItem('sellId');  
     // let proid = 0;
-    localStorage.setItem('proId', addseller.id.toString());
-    let proid: any = localStorage.getItem('proId'); 
+    localStorage.setItem('sellId', addseller.id.toString());
+    let proid: any = localStorage.getItem('sellId'); 
     if (+proid > 0) {  
-      this.sellerService.getById(+proid).subscribe(
+      this.sellerService.getByIdSell(+proid).subscribe(
         data => {this.addForm.patchValue(data);}
         )  
       
@@ -82,7 +82,7 @@ export class SellerComponent implements OnInit {
 
   } 
 
-  update(){
+  updateSeller(){
 
 
     // this.addForm = new FormGroup({
@@ -98,16 +98,16 @@ export class SellerComponent implements OnInit {
     //   phone: new FormControl(posts.phone),
     // });
 
-    this.sellerService.update(this.addForm.value).subscribe(data =>{  
+    this.sellerService.updateSell(this.addForm.value).subscribe(data =>{  
      
        
-    } )
+    } );
 
-  };
+  }
 
 
   
-  edit(posts: addSeller){
+  editsell(posts: addSeller){
 
 
     this.addForm = new FormGroup({
