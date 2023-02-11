@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AccounceComponent } from './admin/accounce/accounce.component';
 import { CustomerComponent } from './admin/customer/customer.component';
+import { InvoiceComponent } from './admin/invoice/invoice.component';
 import { PaymentComponent } from './admin/payment/payment.component';
 import { ProductComponent } from './admin/product/product.component';
 import { ProductlistComponent } from './admin/productlist/productlist.component';
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: 'login', component: LoginComponent },
   { path: 'product', component: ProductComponent },
+  { path: 'invoice', component: InvoiceComponent },
   
   
   { path: 'stock', component: StockComponent },

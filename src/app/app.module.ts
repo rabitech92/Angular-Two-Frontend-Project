@@ -65,15 +65,6 @@ import { FooterComponent } from './component/footer/footer.component';
     InvoiceComponent,
     PaymentComponent,
     FooterComponent,
-    
-
-    
-    
-    
-
-    
-    
-    
   
   ],
   imports: [
