@@ -40,8 +40,8 @@
             </div> <!-- form-group// -->
         
             <div class="form-group">
-                <button type="submit" class="btn btn-primary btn-block" type="submit"> Create Account </button>
-                <button type="submit" class="btn btn-primary btn-block" type="submit" (click)="updateCus()"> Update</button>
+                <button type="submit" class="btn btn-primary btn-block" type="submit"> Submit </button>
+                <!-- <button type="submit" class="btn btn-primary btn-block" type="submit" (click)="updateCus()"> Update</button> -->
            
             </div> <!-- form-group// -->
         
@@ -69,7 +69,10 @@
             <td>{{cus.address}}</td>
             <td>{{cus.phone}}</td>
             <td>{{cus.password}}</td>
-            <td style="text-align: center;"> <button class="btn btn-info" (click)="editCustomer(cus)">Update</button>&nbsp;<button class="btn btn-danger"(click)="DeleteCus(cus)">Delete</button> </td>
+            <td style="text-align: center;"> 
+                <button class="btn btn-info" (click)="editCustomer(cus)">Update</button>&nbsp;
+                <button class="btn btn-danger"(click)="DeleteCus(cus)">Delete</button> 
+            </td>
 
         </tr>
         

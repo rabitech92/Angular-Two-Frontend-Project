@@ -18,6 +18,7 @@ export class CustomerComponent implements OnInit {
   
   ngOnInit(): void {
     this.addCustom = new FormGroup({
+      id :new FormControl(),
       name :new FormControl('', [Validators.required]),
       address :new FormControl('', [Validators.required]),
       phone :new FormControl('', [Validators.required]),
@@ -48,13 +49,14 @@ export class CustomerComponent implements OnInit {
         this.ngOnInit();
       });
     }
+    
   editCustomer(AddCustomer:addCustomer): void{
     localStorage.removeItem('id');
     localStorage.setItem('id',AddCustomer.id.toString());
   let id:any = localStorage.getItem('id');
   if(+id>0){
-    this.customerService.getByIdCus(+id).subscribe(
-      data=>{
+    this.customerService.getByIdCus(AddCustomer.id).subscribe(
+      data=>{        
         this.addCustom.patchValue(data);
       }
     );
@@ -63,18 +65,19 @@ export class CustomerComponent implements OnInit {
 
 }
 updateCus(){
-  this.customerService.updateCus(this.addCustom.value).subscribe(data=>{
+  console.log('Update--',this.addCustom.value)
 
+  this.customerService.updateCus(this.addCustom.value).subscribe(data=>{
   });
 }
- editcustom(cust:addCustomer){
-  this.addCustom = new FormGroup({
-    name :new FormControl('', [Validators.required]),
-    address :new FormControl('', [Validators.required]),
-    phone :new FormControl('', [Validators.required]),
-    password:new FormControl('', [Validators.required]),
-  });
+//  editcustom(cust:addCustomer){
+//   this.addCustom = new FormGroup({
+//     name :new FormControl('', [Validators.required]),
+//     address :new FormControl('', [Validators.required]),
+//     phone :new FormControl('', [Validators.required]),
+//     password:new FormControl('', [Validators.required]),
+//   });
   
- }
+//  }
 
 }
