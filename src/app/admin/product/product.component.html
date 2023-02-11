@@ -1,18 +1,18 @@
 <div class="container bg-primary text-white text-center">
     <strong></strong><h2>Product Register Form</h2><strong></strong>
 </div>
-<form action="">
+<form [formGroup]="formProduct" style="color: black;" (ngSubmit)="addProduct()" >
     <div class="row mb-3">
         <label class=" name col-2 d-flex justify-content-end">Product Name :</label>
-        <input type="text" class="col-md-7" placeholder="Product Name">
+        <input type="text" class="col-md-7" placeholder="Product Name" formControlName="pName">
     </div>
     <div class="row mb-3">
         <label class=" name col-2 d-flex justify-content-end">Product ID :</label>
-        <input type="text" class="col-md-7" placeholder="Product Id">
+        <input type="text" class="col-md-7" placeholder="Product Id" formControlName="pId">
     </div>
     <div class="row mb-3">
         <label for="PreoductType" class=" name col-2 d-flex justify-content-end"> Product Type :</label>
-        <select name="" id="" class="col-3">
+        <select name="custom-select" class="col-3" formControlName="pType">
             <option value="">Fruits And Vegetable</option>
             <option value="">Meat & Fish</option>
             <option value="">Cooking Essentials</option>
@@ -32,7 +32,7 @@
 
         </select>
         <label for="PreoductType" class=" name col-1 d-flex justify-content-end mb-@"> Product Brand :</label>
-        <select name="" id="" class="col-3">
+        <select name="custom-select" class="col-3" formControlName="pBrand">
             <option value="">Fruits And Vegetable</option>
             <option value="">Meat & Fish</option>
             <option value="">Cooking Essentials</option>
@@ -56,34 +56,71 @@
     </div>
         <div class="row mb-3">
             <label class=" name col-2 d-flex justify-content-end">Product Quntity :</label>
-            <input type="text" class="col-md-7" placeholder="Product Quntity">
+            <input type="number" class="col-md-7" placeholder="Product Quntity" formControlName="pQty">
         </div>
 
         <div class="row mb-3">
             <label class=" name col-2 d-flex justify-content-end">Product Price :</label>
-            <input type="text" class="col-md-7" placeholder="Product Price">
+            <input type="number" class="col-md-7" placeholder="Product Price" formControlName="pInvPrice">
         </div>
 
         <div class="row mb-3">
             <label class=" name col-2 d-flex justify-content-end">Selling Price :</label>
-            <input type="text" class="col-md-7" placeholder="Selling Price ">
+            <input type="number" class="col-md-7" placeholder="Selling Price " formControlName="pSellPrice">
         </div>
 
         <div class="row mb-3">
             <label class=" name col-2 d-flex justify-content-end">Suppliar Name :</label>
-            <input type="text" class="col-md-7" placeholder="Suppliar Name">
+            <input type="text" class="col-md-7" placeholder="Suppliar Name" formControlName="suppName">
         </div>
         <div class="row mb-3">
             <label class=" name col-2 d-flex justify-content-end">Suppliar Address :</label>
-            <input type="text" class="col-md-7" placeholder="Suppliar Address">
+            <input type="text" class="col-md-7" placeholder="Suppliar Address" formControlName="suppAddress">
         </div>
         <div class="container bg-light">
             <div class="col-md-12 text-center">
-                <button type="Summit" class="btn btn-primary">Submit</button>&nbsp;
-                <button type="Summit" class="btn btn-warning">Cancel</button>
+                <button type="submit" class="btn btn-primary">Submit</button>&nbsp;
+                <button type="reset" class="btn btn-warning">Cancel</button>
             </div>
         </div>    
 </form>
+<div>
+    <table class="table">
+        <thead style="color: black;">
+            <tr style="background-color: blueviolet; text-align: center; color: white;">
+                <td>Id</td>
+                <td>Product Name</td>
+                <td>Product ID</td>
+                <td>Product Type</td>
+                <td>Product Brand</td>
+                <td>Product Quantity</td>
+                <td>Product Buying Price</td>
+                <td>Product Selling Price</td>
+                <td>Suppliar Name</td>
+                <td>Suppliar Address</td>
+                <td style="text-align: center;">Action</td>
+            </tr>
+        </thead>
+        <tbody>
+                <tr *ngFor="let por of product" class="mb-2">
+                  <td >{{por.id}}</td>
+                  <td> {{por.pName}}</td>
+                  <td>{{por.pId}}</td>
+                  <td >{{por.pType}}</td>
+                  <td>{{por.pBrand}}</td>
+                  <td>{{por.pQty}}</td>
+                  <td>{{por.pInvPrice}}</td>
+                  <td>{{por.pSellPrice}}</td>
+                  <td>{{por.suppName}}</td>
+                  <td>{{por.suppAddress}}</td>
+                  <td style="text-align: center;"> 
+                    <button class="btn btn-info" (click)="editProduct(por)">Update</button>&nbsp;
+                    <button class="btn btn-danger"(click)="deleteProduct(por)">Delete</button> 
+                </td>
+                </tr>               
+              </tbody>
+    </table>
+</div>
 
 
 

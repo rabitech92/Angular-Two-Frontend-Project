@@ -1,12 +1,12 @@
 export class addProduct{
       public  id:any;
-      public  pId!:string;
       public  pName!:string;
+      public  pId!:string;      
       public  pType!:string;
       public  pBrand!:string;
-      public  PQty!:String;
-      public  pInvPrice!:string;
-      public  pSellPrice!:Number;
-      public  suppNaqme!:string;
-      public  SuppAddress!:string;
+      public  pQty!:any;
+      public  pInvPrice!:any;
+      public  pSellPrice!:any;
+      public  suppName!:string;
+      public  suppAddress!:string;
 }
