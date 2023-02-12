@@ -13,42 +13,42 @@
     <div class="row mb-3">
         <label for="PreoductType" class=" name col-2 d-flex justify-content-end"> Product Type :</label>
         <select name="custom-select" class="col-3" formControlName="pType">
-            <option value="">Fruits And Vegetable</option>
-            <option value="">Meat & Fish</option>
-            <option value="">Cooking Essentials</option>
-            <option value="">Sauces, Pickles & Condiments</option>
-            <option value="">Snacks & Instant Foods</option>
-            <option value="">Baby Food & Care</option>
-            <option value="">Breads, Biscut & Cakes</option>
-            <option value="">Spreads</option>
-            <option value="">Dairy</option>
-            <option value="">Beverages</option>
-            <option value="">Personal Care</option>
-            <option value="">Home Care & Cleaning</option>
-            <option value="">Home & Living</option>
-            <option value="">Home Appliance</option>
-            <option value="">Other</option>
-            <option value="">other</option>
+            <option>Fruits And Vegetable</option>
+            <option>Meat & Fish</option>
+            <option>Cooking Essentials</option>
+            <option>Sauces, Pickles & Condiments</option>
+            <option>Snacks & Instant Foods</option>
+            <option>Baby Food & Care</option>
+            <option>Breads, Biscut & Cakes</option>
+            <option>Spreads</option>
+            <option>Dairy</option>
+            <option>Beverages</option>
+            <option>Personal Care</option>
+            <option>Home Care & Cleaning</option>
+            <option>Home & Living</option>
+            <option>Home Appliance</option>
+            <option>Other</option>
+            <option>other</option>
 
         </select>
         <label for="PreoductType" class=" name col-1 d-flex justify-content-end mb-@"> Product Brand :</label>
         <select name="custom-select" class="col-3" formControlName="pBrand">
-            <option value="">Fruits And Vegetable</option>
-            <option value="">Meat & Fish</option>
-            <option value="">Cooking Essentials</option>
-            <option value="">Sauces, Pickles & Condiments</option>
-            <option value="">Snacks & Instant Foods</option>
-            <option value="">Baby Food & Care</option>
-            <option value="">Breads, Biscut & Cakes</option>
-            <option value="">Spreads</option>
-            <option value="">Dairy</option>
-            <option value="">Beverages</option>
-            <option value="">Personal Care</option>
-            <option value="">Home Care & Cleaning</option>
-            <option value="">Home & Living</option>
-            <option value="">Home Appliance</option>
-            <option value="">Other</option>
-            <option value="">other</option>
+            <option>Fruits And Vegetable</option>
+            <option>Meat & Fish</option>
+            <option>Cooking Essentials</option>
+            <option>Sauces, Pickles & Condiments</option>
+            <option>Snacks & Instant Foods</option>
+            <option>Baby Food & Care</option>
+            <option>Breads, Biscut & Cakes</option>
+            <option>Spreads</option>
+            <option>Dairy</option>
+            <option>Beverages</option>
+            <option>Personal Care</option>
+            <option>Home Care & Cleaning</option>
+            <option>Home & Living</option>
+            <option>Home Appliance</option>
+            <option>Other</option>
+            <option>other</option>
 
         </select>
 
@@ -66,16 +66,16 @@
 
         <div class="row mb-3">
             <label class=" name col-2 d-flex justify-content-end">Selling Price :</label>
-            <input type="number" class="col-md-7" placeholder="Selling Price " formControlName="pSellPrice">
+            <input type="number" class="col-md-7" placeholder="Selling Price " formControlName="pSelPrice">
         </div>
 
         <div class="row mb-3">
             <label class=" name col-2 d-flex justify-content-end">Suppliar Name :</label>
-            <input type="text" class="col-md-7" placeholder="Suppliar Name" formControlName="suppName">
+            <input type="text" class="col-md-7" placeholder="Suppliar Name" formControlName="suppliarName">
         </div>
         <div class="row mb-3">
             <label class=" name col-2 d-flex justify-content-end">Suppliar Address :</label>
-            <input type="text" class="col-md-7" placeholder="Suppliar Address" formControlName="suppAddress">
+            <input type="text" class="col-md-7" placeholder="Suppliar Address" formControlName="suppliarAddress">
         </div>
         <div class="container bg-light">
             <div class="col-md-12 text-center">
@@ -110,9 +110,9 @@
                   <td>{{por.pBrand}}</td>
                   <td>{{por.pQty}}</td>
                   <td>{{por.pInvPrice}}</td>
-                  <td>{{por.pSellPrice}}</td>
-                  <td>{{por.suppName}}</td>
-                  <td>{{por.suppAddress}}</td>
+                  <td>{{por.pSelPrice}}</td>
+                  <td>{{por.suppliarName}}</td>
+                  <td>{{por.suppliarAddress}}</td>
                   <td style="text-align: center;"> 
                     <button class="btn btn-info" (click)="editProduct(por)">Update</button>&nbsp;
                     <button class="btn btn-danger"(click)="deleteProduct(por)">Delete</button> 

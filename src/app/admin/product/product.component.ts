@@ -14,7 +14,7 @@ export class ProductComponent implements OnInit {
  product !:addProduct[]
  formProduct!:FormGroup;
  formHasError =true;
- constructor(private productService:ProductService, private router : Router) { }
+ constructor(private productService: ProductService, private router : Router) { }
   
  
 
@@ -27,9 +27,9 @@ export class ProductComponent implements OnInit {
     pBrand : new FormControl('', [Validators.required]),
     pQty : new FormControl('', [Validators.required]),
     pInvPrice :  new FormControl('', [Validators.required]),
-    pSellPrice : new FormControl('', [Validators.required]),
-    suppName : new FormControl('', [Validators.required]),
-    suppAddress : new FormControl('', [Validators.required]),
+    pSelPrice : new FormControl('', [Validators.required]),
+    suppliarName : new FormControl('', [Validators.required]),
+    suppliarAddress : new FormControl('', [Validators.required]),
 
    });
    this.productService.getAllProd().subscribe((data:addProduct[])=>{
@@ -71,7 +71,7 @@ export class ProductComponent implements OnInit {
 
   }
 
-  updateSeller(){
+  updateProduct(){
 
 
     // this.addForm = new FormGroup({
