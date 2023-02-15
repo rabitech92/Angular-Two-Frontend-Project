@@ -1,0 +1,107 @@
+.main {
+    display: flex;
+    position: relative;
+  
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  
+    width: clamp(200px, fit-content, 800px);
+  
+    margin: auto;
+    padding: 1rem;
+  
+    list-style: none;
+  
+    overflow-y: auto;
+  }
+  app-invoices-total {
+    width: 100%;
+  }
+  
+  ul li:last-child {
+    margin-bottom: -1rem;
+  }
+  
+  .totals {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin: auto;
+  }
+  
+  .inner-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  
+    color: var(--primary);
+  
+    min-width: 28rem;
+  
+    padding: 0 1.5rem;
+  }
+  
+  .text-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .mat-title {
+    margin-bottom: 0.2rem;
+  
+    color: var(--primary);
+    font-size: 1.6rem;
+    font-weight: bold;
+  }
+  
+  .add-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  
+    width: 7.8rem;
+  
+    padding: 0.4rem;
+    border-radius: 1.5rem;
+  
+    background-color: var(--primary);
+    cursor: pointer;
+  }
+  
+  .add-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    background-color: white;
+    color: var(--primary);
+  
+    border-radius: 50%;
+    height: 1.8rem;
+    width: 1.8rem;
+  }
+  
+  .btn-text {
+    font-size: small;
+    font-weight: 500;
+    color: white;
+  
+    margin-right: 0.2rem;
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .inner-header {
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+    }
+    .inner-header div {
+      margin-bottom: 0.1rem;
+    }
+    .add-btn {
+      display: none;
+    }
+  }
+  

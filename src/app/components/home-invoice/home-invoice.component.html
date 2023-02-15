@@ -1,0 +1,30 @@
+<div class="inner-header">
+    <div class="text-wrapper">
+      <span class="text-primary-xl mb">Invoices</span>
+      <span id="invoices-number" class="mat-body-2 text-light"
+        >{{ numberOfInvoices() }}
+      </span>
+    </div>
+    <div>
+      <div matRipple class="add-btn" (click)="sidebar.open()">
+        <div class="add-icon">
+          <mat-icon aria-hidden="false" aria-label="add icon">add</mat-icon>
+        </div>
+        <span class="btn-text">New invoice</span>
+      </div>
+    </div>
+  </div>
+  
+  <div class="main">
+    <mat-accordion>
+      <app-invoice
+        (triggerRender)="emitTriggerRender()"
+        *ngFor="let invoice of invoices"
+        [invoice]="invoice"
+      ></app-invoice>
+    </mat-accordion>
+  </div>
+  <div class="totals">
+    <app-invoices-total [invoices]="invoices"></app-invoices-total>
+  </div>
+  

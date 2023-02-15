@@ -17,6 +17,8 @@ import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { DelivaryComponent } from './component/delivary/delivary.component';
 import { LoginComponent } from './component/login/login.component';
 import { OrderComponent } from './component/order/order.component';
+import { AddInvoiceComponent } from './components/add-invoice/add-invoice.component';
+import { InvoiceComponent } from './components/invoice/invoice.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -38,6 +40,8 @@ const routes: Routes = [
   {path :'user', component:UserComponent},
   {path :'seller', component:SellerComponent},
   {path :'payment', component:PaymentComponent},
+  {path :'addinvoice', component:AddInvoiceComponent},
+  {path :'invoice', component:InvoiceComponent},
   
 
 

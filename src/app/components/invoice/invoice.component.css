@@ -1,0 +1,232 @@
+mat-expansion-panel {
+    height: fit-content;
+    margin: 1rem 0rem;
+  }
+  
+  mat-expansion-panel-header {
+    height: fit-content;
+  }
+  .mat-ripple {
+    display: none;
+  }
+  
+  .drawer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  
+    width: clamp(8rem, 85vw, 38rem);
+    margin-bottom: 1.5rem;
+    padding: 0 0.6rem;
+  
+    color: var(--primaryLight);
+  }
+  
+  .pointer {
+    cursor: pointer;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+    height: 2.8rem;
+  
+    width: 100%;
+    margin: 0.8rem 0rem;
+    color: var(--primaryLight);
+  }
+  
+  .invoice > :nth-child(2) {
+    margin: 0.5rem;
+  }
+  .mr {
+    margin-right: 0.5rem;
+  }
+  .total {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  
+    width: 5rem;
+  }
+  
+  .description {
+    overflow-y: auto;
+    resize: none;
+  
+    width: 12rem;
+    height: 6rem;
+  }
+  
+  .status {
+    align-self: flex-end;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    min-width: 6rem;
+    height: 2rem;
+  
+    color: var(--primary);
+    font-weight: bold;
+  
+    border-radius: 0.3rem;
+    user-select: none;
+  }
+  .status.paid {
+    color: rgb(0, 134, 0);
+    border: 1px solid rgb(0, 134, 0);
+  }
+  .status.paid .dot {
+    display: none;
+  }
+  .dot {
+    font-size: 1.4rem;
+    margin-right: 0.3rem;
+  }
+  .delete-button {
+    display: flex;
+    flex-direction: row-reverse;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  
+    margin: 1rem;
+  }
+  .invoice-btn {
+    opacity: 0;
+    padding: 0 0.7rem;
+  }
+  .desc-field {
+    max-width: 15rem;
+    max-height: 5rem;
+  
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  .col {
+    display: flex;
+    flex-direction: column;
+  
+    height: 9rem;
+  }
+  
+  .input-mod {
+    outline: none;
+    border: none;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    transition: all 200ms ease;
+  
+    padding: 2px;
+  }
+  .total-input {
+    width: 8rem;
+  }
+  .total-input::before {
+    position: absolute;
+    left: -1.5rem;
+    content: "asda";
+  }
+  .input-wrapper:focus-within::before {
+    position: absolute;
+    left: -1.5rem;
+    content: "\270E";
+    animation: fadeLeft 200ms;
+    font-size: 1rem;
+  }
+  .input-wrapper:hover::before {
+    position: absolute;
+    left: -1.5rem;
+    content: "\270E";
+    animation: fadeLeft 200ms;
+    font-size: 1rem;
+  }
+  .relative {
+    position: relative;
+  }
+  .hovered {
+    position: relative;
+    cursor: text;
+  }
+  .fake-header {
+    position: absolute;
+    top: 1.3rem;
+  }
+  .fake-header span,
+  div {
+    cursor: pointer;
+  }
+  .hidden {
+    display: none;
+  }
+  
+  .easeUp {
+    animation: fadeUp 200ms ease forwards 150ms;
+  }
+  .easeLeft {
+    animation: fadeLeft 400ms ease;
+  }
+  .fadeOut {
+    animation: fadeOut 200ms ease;
+  }
+  
+  @media only screen and (max-width: 600px) {
+    mat-expansion-panel {
+      width: 95vw;
+      width: clamp(4rem, 95vw, 22rem);
+    }
+    .header {
+      flex-direction: column;
+      height: auto;
+    }
+    .total-input {
+      width: 6.3rem;
+      margin-right: 0;
+    }
+    .drawer {
+      flex-direction: column;
+      align-items: flex-start;
+  
+      overflow-y: auto;
+      max-height: 15rem;
+    }
+    .drawer > div {
+      margin: 0.5rem 0rem;
+    }
+  
+    .date-info {
+      display: none;
+    }
+  }
+  
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(1.2rem);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes fadeLeft {
+    from {
+      opacity: 0;
+      transform: translateX(0.8rem);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+  

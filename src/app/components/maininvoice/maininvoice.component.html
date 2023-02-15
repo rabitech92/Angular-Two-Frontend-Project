@@ -1,0 +1,28 @@
+<mat-sidenav-container>
+  <mat-sidenav [fixedInViewport]="true" #sidebar mode="side">
+    <app-add-invoice
+      (triggerRenderEvent)="getInvoices()"
+      [sidebar]="sidebar"
+    ></app-add-invoice>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <button class="add-btn" mat-fab color="primary" (click)="sidebar.toggle()">
+      <mat-icon
+        *ngIf="!sidebar.opened"
+        aria-hidden="false"
+        aria-label="add icon"
+        >add</mat-icon
+      >
+      <mat-icon *ngIf="sidebar.opened" aria-hidden="false" aria-label="add icon"
+        >close</mat-icon
+      >
+    </button>
+    <app-home
+      (triggerRender)="getInvoices()"
+      (sidebar)="sidebar"
+      (invoices)="invoices"
+    ></app-home>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+

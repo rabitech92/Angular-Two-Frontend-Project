@@ -31,7 +31,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatRippleModule } from '@angular/material/core';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDialogModule } from '@angular/material/dialog';
-import { MomentDateModule } from '@angular/material-moment-adapter';
+
 
 
 
@@ -52,6 +52,12 @@ import { CustomerComponent } from './admin/customer/customer.component';
 import { PaymentComponent } from './admin/payment/payment.component';
 import { FooterComponent } from './component/footer/footer.component';
 import { HomeComponent } from './admin/home/home.component';
+import { AddInvoiceComponent } from './components/add-invoice/add-invoice.component';
+import { DialogComponent } from './components/dialog/dialog.component';
+import { InvoiceComponent } from './components/invoice/invoice.component';
+import { InvoicesTotalComponent } from './components/invoices-total/invoices-total.component';
+import { HomeInvoiceComponent } from './components/home-invoice/home-invoice.component';
+import { MaininvoiceComponent } from './components/maininvoice/maininvoice.component';
 
 
 
@@ -76,6 +82,12 @@ import { HomeComponent } from './admin/home/home.component';
   
     PaymentComponent,
     FooterComponent,
+    AddInvoiceComponent,
+    DialogComponent,
+    InvoiceComponent,
+    InvoicesTotalComponent,
+    HomeInvoiceComponent,
+    MaininvoiceComponent,
   
   
   
@@ -107,7 +119,7 @@ import { HomeComponent } from './admin/home/home.component';
     MatRippleModule,
     MatCheckboxModule,
     MatDialogModule,
-    MomentDateModule, 
+    
 
 
     

@@ -1,0 +1,83 @@
+.form-wrapper {
+  width: 480px;
+
+  z-index: 10;
+}
+
+.form {
+  display: flex;
+  position: relative;
+
+  flex-direction: column;
+  color: var(--primary);
+
+  justify-content: flex-start;
+  align-items: center;
+
+  padding: 5rem 0.8rem 0rem 0.8rem;
+}
+
+.title-wrapper {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+
+  top: 0;
+  left: 0;
+  height: 5rem;
+  width: 100%;
+
+  color: white;
+  background-color: var(--primary);
+
+  font-size: medium;
+  font-weight: 500;
+  text-transform: uppercase;
+
+  border-radius: 0 0 0.5rem 0.5rem;
+}
+
+.title-sm {
+  margin-bottom: 1rem;
+  align-self: flex-start;
+
+  padding-left: 1rem;
+  margin-top: 1.5rem;
+
+  font-weight: 500;
+}
+
+.m {
+  width: 100%;
+  margin: 1rem 0;
+}
+
+.btn-group {
+  display: flex;
+  justify-content: flex-end;
+  justify-self: flex-end;
+
+  width: 100%;
+  margin-bottom: 2rem;
+  padding-right: 1rem;
+
+  align-self: flex-end;
+}
+
+.date-input {
+  width: 48%;
+}
+
+.form-field-lg {
+  width: 100%;
+}
+
+.form-field-sm {
+  width: 30%;
+}
+
+.bill {
+  text-align: center;
+  width: 48%;
+}

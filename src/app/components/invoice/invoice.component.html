@@ -1,0 +1,217 @@
+<mat-expansion-panel
+  #drawer
+  [hideToggle]="!panelOpen"
+  (opened)="panelOpen = true"
+  (closed)="panelOpen = false"
+>
+  <mat-expansion-panel-header expandedHeight="4.6rem">
+    <div class="header">
+      <div [hidden]="panelOpen" class="date-info">
+        <span
+          >#<span class="text-primary mr">{{ invoice.id }}</span></span
+        >
+        <span>
+          Due
+          <span class="text-primary-thin">{{ displayDate }}</span>
+        </span>
+      </div>
+
+      <span [hidden]="panelOpen" class="text-primary">{{ invoice.name }}</span>
+      <div
+        *ngIf="!panelOpen"
+        class="flex-center"
+        [ngClass]="{ easeLeft: panelOpen }"
+      >
+        <span
+          id="header-total"
+          class="text-primary-lg"
+          [ngClass]="{ 'text-primary-xl': panelOpen }"
+          >${{ floatTotal(invoice.total) }}</span
+        >
+        <div [ngClass]="{ paid: invoice.isPaid == true }" class="status">
+          <div class="flex-center">
+            <span class="dot">&#8226;</span>
+            <span id="status-display">{{
+              invoice.isPaid ? "Paid" : "Pending"
+            }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-expansion-panel-header>
+
+  <div class="drawer">
+    <div
+      class="flex-center fake-header"
+      [ngClass]="{ easeLeft: panelOpen, hidden: !panelOpen }"
+    >
+      <h1 cl></h1>
+      <span class="text-primary">$</span>
+      <input
+        id="drawer-total"
+        class="text-primary-lg input-wrapper input-mod total-input"
+        [(ngModel)]="invoice.total"
+        [ngClass]="{ 'text-primary-xl': panelOpen }"
+        [value]="invoice.total"
+        (input)="handleEdit()"
+      />
+
+      <div
+        matRipple
+        [matRippleRadius]="50"
+        [matRippleCentered]="true"
+        [matRippleColor]="!invoice.isPaid ? '#37aa3733' : '#0437aa4d'"
+        (click)="handleStatusButton()"
+        [ngClass]="{
+          paid:
+            (!isDirty && invoice.isPaid == true) || (isDirty && invoice.isPaid)
+        }"
+        class="status"
+      >
+        <div class="flex-center">
+          <span class="dot">&#8226;</span>
+          {{ invoice.isPaid ? "Paid" : "Pending" }}
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <span>Payment Due:</span>
+      <span class="text-primary divide pointer" (click)="picker.open()">{{
+        displayDate
+      }}</span>
+
+      <mat-form-field class="hidden">
+        <input
+          #datePicker
+          matInput
+          (dateInput)="handlePicker(datePicker.value)"
+          [matDatepicker]="picker"
+        />
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+
+      <span>Invoice description:</span>
+      <span class="relative">
+        <span class="input-wrapper">
+          <textarea
+            id="description"
+            class="text-primary input-mod description"
+            [(ngModel)]="invoice.description"
+            [value]="invoice.description"
+            (input)="handleEdit()"
+          ></textarea>
+        </span>
+      </span>
+    </div>
+
+    <div class="col">
+      <span class="divide">Bill to:</span>
+      <span class="relative">
+        <span class="input-wrapper"
+          ><input
+            id="name-input"
+            class="text-primary-md input-mod"
+            type="text"
+            [(ngModel)]="invoice.name"
+            [value]="invoice.name"
+            (input)="handleEdit()"
+        /></span>
+      </span>
+
+      <span class="relative">
+        <span class="input-wrapper"
+          ><input
+            id="address-input"
+            class="text-light input-mod"
+            type="text"
+            [(ngModel)]="invoice.address"
+            [value]="invoice.address"
+            (input)="handleEdit()"
+        /></span>
+      </span>
+
+      <span class="relative">
+        <span class="input-wrapper"
+          ><input
+            id="city-input"
+            class="text-light input-mod"
+            type="text"
+            [(ngModel)]="invoice.city"
+            [value]="invoice.city"
+            (input)="handleEdit()"
+        /></span>
+      </span>
+
+      <span class="relative">
+        <span class="input-wrapper"
+          ><input
+            id="code-input"
+            class="text-light input-mod"
+            type="number"
+            [(ngModel)]="invoice.code"
+            [value]="invoice.code"
+            (input)="handleEdit()"
+        /></span>
+      </span>
+
+      <span class="relative">
+        <span class="input-wrapper"
+          ><input
+            id="country-input"
+            type="text"
+            class="text-light input-mod"
+            [(ngModel)]="invoice.country"
+            [value]="invoice.country"
+            (input)="handleEdit()"
+        /></span>
+      </span>
+    </div>
+
+    <div class="col">
+      <span class="divide">Sent to:</span>
+
+      <span class="relative">
+        <span class="input-wrapper"
+          ><input
+            id="email-input"
+            type="email"
+            class="text-primary input-mod mb"
+            [(ngModel)]="invoice.email"
+            [value]="invoice.email"
+            (input)="handleEdit()"
+        /></span>
+      </span>
+
+      <span
+        >Invoice ID: #<span class="text-primary">{{ invoice.id }}</span></span
+      >
+    </div>
+    <div class="delete-button">
+      <button
+        *ngIf="panelOpen"
+        mat-button
+        [ngClass]="{ easeUp: drawer.opened }"
+        class="invoice-btn"
+        (click)="openDialog(drawer)"
+      >
+        <mat-icon color="primary" aria-hidden="false" aria-label="add icon"
+          >delete_outline</mat-icon
+        >
+      </button>
+      <button
+        *ngIf="panelOpen && isDirty"
+        [ngClass]="{ easeUp: drawer.opened }"
+        (click)="handleSyncButton(drawer)"
+        class="invoice-btn flex-center"
+        mat-button
+      >
+        <span class="text-primary-thin mr">Sync changes</span>
+
+        <mat-icon color="primary" aria-hidden="false" aria-label="add icon"
+          >sync</mat-icon
+        >
+      </button>
+    </div>
+  </div>
+</mat-expansion-panel>
