@@ -5,6 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { NgxPrintModule } from 'ngx-print';
 import { HeaderComponent } from './component/header/header.component';
 import { SidenavComponent } from './component/sidenav/sidenav.component';
 import { DashboardComponent } from './component/dashboard/dashboard.component';
@@ -58,6 +59,7 @@ import { InvoiceComponent } from './components/invoice/invoice.component';
 import { InvoicesTotalComponent } from './components/invoices-total/invoices-total.component';
 import { HomeInvoiceComponent } from './components/home-invoice/home-invoice.component';
 import { MaininvoiceComponent } from './components/maininvoice/maininvoice.component';
+import { ViewinvoiceComponent } from './admin/viewinvoice/viewinvoice.component';
 
 
 
@@ -88,6 +90,7 @@ import { MaininvoiceComponent } from './components/maininvoice/maininvoice.compo
     InvoicesTotalComponent,
     HomeInvoiceComponent,
     MaininvoiceComponent,
+    ViewinvoiceComponent,
   
   
   
@@ -100,6 +103,7 @@ import { MaininvoiceComponent } from './components/maininvoice/maininvoice.compo
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    NgxPrintModule,
 
     MatSidenavModule,
     MatToolbarModule,

@@ -1,130 +1,102 @@
 <p>add-invoice works!</p>
 <form class="form" #addForm="ngForm" (ngSubmit)="onAddInvoice(addForm)">
-    <div class="title-wrapper">Create invoice</div>
-  
-    <span class="title-sm mat-h4">Billing information</span>
-  
-    <mat-form-field class="form-field-lg" appearance="outline">
-      <mat-label>Client Name</mat-label>
-      <input matInput name="name" ngModel type="text" required />
+  <div class="title-wrapper">Create invoice</div>
+
+  <span class="title-sm mat-h4">Billing information</span>
+
+  <mat-form-field class="form-field-lg" appearance="outline">
+    <mat-label>Client Name</mat-label>
+    <input matInput name="name" ngModel type="text" required />
+  </mat-form-field>
+
+  <mat-form-field class="form-field-lg" appearance="outline">
+    <mat-label>Client's Email</mat-label>
+    <input matInput name="email" ngModel type="email" value="test_email@test.org" required />
+  </mat-form-field>
+
+  <mat-form-field class="form-field-lg" appearance="outline">
+    <mat-label>Street Address</mat-label>
+    <input matInput name="address" ngModel type="text" value="66th Hell Cauldron's Way" />
+  </mat-form-field>
+
+  <div class="space-between m">
+    <mat-form-field class="form-field-sm" appearance="outline">
+      <mat-label>City</mat-label>
+      <input matInput name="city" ngModel type="text" value="Boston" />
     </mat-form-field>
-  
-    <mat-form-field class="form-field-lg" appearance="outline">
-      <mat-label>Client's Email</mat-label>
-      <input
-        matInput
-        name="email"
-        ngModel
-        type="email"
-        value="test_email@test.org"
-        required
-      />
+
+    <mat-form-field class="form-field-sm" appearance="outline">
+      <mat-label>Postal Code</mat-label>
+      <input matInput type="number" name="code" ngModel #post_code maxlength="5" placeholder="Ex. 94105"
+        value="94043" />
+      <mat-hint align="end">{{ post_code.value.length }} / 5</mat-hint>
     </mat-form-field>
-  
-    <mat-form-field class="form-field-lg" appearance="outline">
-      <mat-label>Street Address</mat-label>
-      <input
-        matInput
-        name="address"
-        ngModel
-        type="text"
-        value="66th Hell Cauldron's Way"
-      />
+
+    <mat-form-field class="form-field-sm" appearance="outline">
+      <mat-label>Country</mat-label>
+      <input matInput name="country" ngModel type="text" value="MA" />
     </mat-form-field>
-  
-    <div class="space-between m">
-      <mat-form-field class="form-field-sm" appearance="outline">
-        <mat-label>City</mat-label>
-        <input matInput name="city" ngModel type="text" value="Boston" />
-      </mat-form-field>
-  
-      <mat-form-field class="form-field-sm" appearance="outline">
-        <mat-label>Postal Code</mat-label>
-        <input
-          matInput
-          type="number"
-          name="code"
-          ngModel
-          #post_code
-          maxlength="5"
-          placeholder="Ex. 94105"
-          value="94043"
-        />
-        <mat-hint align="end">{{ post_code.value.length }} / 5</mat-hint>
-      </mat-form-field>
-  
-      <mat-form-field class="form-field-sm" appearance="outline">
-        <mat-label>Country</mat-label>
-        <input matInput name="country" ngModel type="text" value="MA" />
-      </mat-form-field>
-    </div>
-  
-    <mat-form-field class="form-field-lg" appearance="outline">
-      <mat-label>Product Description</mat-label>
-      <textarea matInput name="description" ngModel>
-        Some detailed project description. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae, maxime!</textarea
-      >
+  </div>
+
+  <mat-form-field class="form-field-lg" appearance="outline">
+    <mat-label>Product Description</mat-label>
+    <textarea matInput name="description" ngModel>
+        Some detailed project description. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae, maxime!</textarea>
+  </mat-form-field>
+
+  <mat-checkbox name="isPaid" ngModel class="checkbox" type="checkbox" color="primary">Invoice already
+    paid?</mat-checkbox>
+
+  <div class="space-between m">
+    <mat-form-field class="date-input" appearance="outline">
+      <mat-label>Choose a due date</mat-label>
+      <input #input matInput name="dueDate" ngModel [matDatepicker]="picker" required />
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
+
+    <mat-form-field class="bill" appearance="outline" floatLabel="always">
+      <mat-label matPrefix><mat-icon class="icon" aria-hidden="false"
+          aria-label="add icon">attach_money</mat-icon></mat-label>
+      <mat-label>Bill Total</mat-label>
+      <input matInput type="number" name="total" ngModel required /></mat-form-field>
+  </div>
+
+  <div class="btn-group">
+    <button type="button" class="btn-lg" mat-button color="primary" (click)="sidebar.close()">
+      Cancel
+    </button>
+    <button mat-raised-button id="submitBtn" type="submit" class="btn-lg" color="primary" (click)="sidebar.close()"
+      [disabled]="addForm.invalid">
+      <mat-icon class="icon" aria-hidden="false" aria-label="add icon">add</mat-icon>
+      <span class="mr">ADD</span>&nbsp;
+      
+    </button>&nbsp;
+   
+    
+  </div>
+</form>
+<div id="selection" style="text-align: center;">
+  <h1 class="" style="text-align: center;">RS Super Shop</h1>
+  <p style="text-align: center;">Palton-1200</p>
+  <p style="text-align: center;">Phone:01734467273</p>
+  <label for="name">Name : </label>
+  <label for="Phone">Phone : </label>
+  <label for="Address">Address : </label>
   
-    <mat-checkbox
-      name="isPaid"
-      ngModel
-      class="checkbox"
-      type="checkbox"
-      color="primary"
-      >Invoice already paid?</mat-checkbox
-    >
-  
-    <div class="space-between m">
-      <mat-form-field class="date-input" appearance="outline">
-        <mat-label>Choose a due date</mat-label>
-        <input
-          #input
-          matInput
-          name="dueDate"
-          ngModel
-          [matDatepicker]="picker"
-          required
-        />
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
-      </mat-form-field>
-  
-      <mat-form-field class="bill" appearance="outline" floatLabel="always">
-        <mat-label matPrefix
-          ><mat-icon class="icon" aria-hidden="false" aria-label="add icon"
-            >attach_money</mat-icon
-          ></mat-label
-        >
-        <mat-label>Bill Total</mat-label>
-        <input matInput type="number" name="total" ngModel required
-      /></mat-form-field>
-    </div>
-  
-    <div class="btn-group">
-      <button
-        type="button"
-        class="btn-lg"
-        mat-button
-        color="primary"
-        (click)="sidebar.close()"
-      >
-        Cancel
-      </button>
-      <button
-        mat-raised-button
-        id="submitBtn"
-        type="submit"
-        class="btn-lg"
-        color="primary"
-        (click)="sidebar.close()"
-        [disabled]="addForm.invalid"
-      >
-        <mat-icon class="icon" aria-hidden="false" aria-label="add icon"
-          >add</mat-icon
-        >
-        <span class="mr">ADD</span>
-      </button>
-    </div>
-  </form>
-  
+  <hr style="background-color: teal; height: 2px;">
+  <table>
+    <thead style="background-color: blueviolet;">      
+        <tr>
+          <th>Name :</th>
+        </tr>      
+    </thead>
+    <tr>
+      <td></td>
+    </tr>
+  </table>
+
+
+</div>
+<button style="flex-direction: column;" printSectionId="selection" ngxPrint>
+  View</button>
