@@ -5,24 +5,39 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './component/home/home.component';
 import { HeaderComponent } from './component/header/header.component';
 import { SidenavComponent } from './component/sidenav/sidenav.component';
 import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { ProductComponent } from './admin/product/product.component';
 
 
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatMenuModule } from '@angular/material/menu';
-import { MatIconModule } from '@angular/material/icon';
-import { MatDividerModule } from '@angular/material/divider';
-import { MatListModule } from '@angular/material/list';
-import { LoginComponent } from './component/login/login.component';
+import {MatSidenavModule } from '@angular/material/sidenav';
+import {MatToolbarModule } from '@angular/material/toolbar';
+import {MatMenuModule } from '@angular/material/menu';
+import {MatIconModule } from '@angular/material/icon';
+import {MatDividerModule } from '@angular/material/divider';
+import {MatListModule } from '@angular/material/list';
+import {LoginComponent } from './component/login/login.component';
 import {MatSelectModule} from '@angular/material/select';
 import {MatCardModule} from '@angular/material/card';
 import {MatTableModule} from '@angular/material/table';
 
+
+
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatRippleModule } from '@angular/material/core';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MomentDateModule } from '@angular/material-moment-adapter';
+
+
+
+
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 import { SellerpanelComponent } from './admin/sellerpanel/sellerpanel.component';
 import { ProductlistComponent } from './admin/productlist/productlist.component';
 import { ProductheaderComponent } from './admin/productheader/productheader.component';
@@ -34,20 +49,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { SellerComponent } from './admin/seller/seller.component';
 import { CustomerComponent } from './admin/customer/customer.component';
-import { InvoiceComponent } from './admin/invoice/invoice.component';
 import { PaymentComponent } from './admin/payment/payment.component';
 import { FooterComponent } from './component/footer/footer.component';
-
-
-
-
+import { HomeComponent } from './admin/home/home.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
     HeaderComponent,
     SidenavComponent,
     DashboardComponent,
@@ -62,9 +72,13 @@ import { FooterComponent } from './component/footer/footer.component';
     UserComponent,
     SellerComponent,
     CustomerComponent,
-    InvoiceComponent,
+    HomeComponent,
+  
     PaymentComponent,
     FooterComponent,
+  
+  
+  
   
   ],
   imports: [
@@ -84,6 +98,22 @@ import { FooterComponent } from './component/footer/footer.component';
     MatSelectModule,
     MatCardModule,
     MatTableModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatExpansionModule,
+    MatRippleModule,
+    MatCheckboxModule,
+    MatDialogModule,
+    MomentDateModule, 
+
+
+    
+    
+
+    
     
   ],
   providers: [],
