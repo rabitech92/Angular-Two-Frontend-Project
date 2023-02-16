@@ -26,7 +26,7 @@
     </mat-form-field>
 
     <mat-form-field class="form-field-sm" appearance="outline">
-      <mat-label>Postal Code</mat-label>
+      <mat-label>Product Price</mat-label>
       <input matInput type="number" name="code" ngModel #post_code maxlength="5" placeholder="Ex. 94105"
         value="94043" />
       <mat-hint align="end">{{ post_code.value.length }} / 5</mat-hint>
@@ -66,37 +66,101 @@
     <button type="button" class="btn-lg" mat-button color="primary" (click)="sidebar.close()">
       Cancel
     </button>
-    <button mat-raised-button id="submitBtn" type="submit" class="btn-lg" color="primary" (click)="sidebar.close()"
+    <button mat-raised-button id="submitBtn" type="submit" class="btn-lg" color="primary"
       [disabled]="addForm.invalid">
       <mat-icon class="icon" aria-hidden="false" aria-label="add icon">add</mat-icon>
       <span class="mr">ADD</span>&nbsp;
       
     </button>&nbsp;
    
-    
+    <!-- Print section strat -->
   </div>
 </form>
+  <!-- <div class="col-md-12 text-center">
+</div> -->
+
+<hr style="background-color: teal; height: 2px;">
+  <!-- <table class="col-12">
+    <thead style="background-color: blueviolet; color: white;">      
+        <tr>
+          <td>Id</td>&nbsp;
+          <td>Name</td>&nbsp;
+          <td>Quantity</td>&nbsp;
+          <td>Total Price</td>
+        </tr>      
+        <tbody style="color: black;">
+          <tr *ngFor="let inv of invoice" class="mb-4" >
+              <td>{{inv.name}}</td>
+              <td>{{inv.code}}</td>
+              <td>{{inv.total}}</td>               
+            </tr>         
+          
+      </tbody>
+  </table> -->
+  <table class="table">
+    <thead style="background-color: blueviolet;padding: 2px;color: white;">
+        <tr>
+          <td>Product Name</td>
+          <td>Address</td>
+          <td>Date</td>
+          <td>Quantity</td>
+          <td>Total Price</td>
+          <td style="text-align: center;"> Action</td>
+  
+        </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let inv of invoice" class="mb-4" >
+        <td>{{inv.name}}</td>
+        <td>{{inv.address}}</td>
+        <td>{{inv.dueDate}}</td>
+        <td>{{inv.code}}</td>
+        <td>{{inv.total}}</td>    
+        <td style="text-align: center;"> 
+          <button type="button" class="btn btn-primary" (click)="printData(inv)" printSectionId="selection" ngxPrint>Print</button>&nbsp;
+          <button class="btn btn-danger" (click)="DeleteInv(inv)">Delete</button> 
+      </td>           
+      </tr>  
+    </tbody>
+  </table>
+  <hr style="background-color: teal; height: 2px;">
+
 <div id="selection" style="text-align: center;">
   <h1 class="" style="text-align: center;">RS Super Shop</h1>
   <p style="text-align: center;">Palton-1200</p>
-  <p style="text-align: center;">Phone:01734467273</p>
-  <label for="name">Name : </label>
-  <label for="Phone">Phone : </label>
-  <label for="Address">Address : </label>
+  <p style="text-align: center;">Phone:01734467273
+  </p>
+
+<div>
+
+  <table class="table">
+  <thead style="background-color: blueviolet;padding: 2px;color: white;">
+      <tr>
+          <td>Name</td> 
+          <td>Address</td>  
+          <td>Date</td>     
+          <td>Quintity</td>
+          <td>Total Price</td>
+      </tr>
+  </thead>
+      <tbody>
+      <tr class="mb-4" >
+        <td>{{singleInvicw.name}}</td> 
+        <td>{{singleInvicw.address}}</td> 
+        <td>{{singleInvicw.dueDate}}</td>         
+        <td>{{singleInvicw.code}}</td>  
+        <td>{{singleInvicw.total}}</td>  		
+      </tr>  
+    </tbody>
+</table>
+</div>
   
-  <hr style="background-color: teal; height: 2px;">
-  <table>
-    <thead style="background-color: blueviolet;">      
-        <tr>
-          <th>Name :</th>
-        </tr>      
-    </thead>
-    <tr>
-      <td></td>
-    </tr>
-  </table>
 
 
 </div>
-<button style="flex-direction: column;" printSectionId="selection" ngxPrint>
-  View</button>
+<!-- Print section End -->
+
+
+ 
+
+
