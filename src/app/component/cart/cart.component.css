@@ -58,18 +58,27 @@ img{
     font-size: 1.8rem;
     cursor: pointer;
     transition: background 0.5s;
+    padding: 5px;
+    margin-right: 20px;
+    margin-left: 20px;
+    
 }
 .icon:hover{
     background-color: teal;
-    color: white;
+    /* color: white; */
+    border-radius: 50%;
+    margin-right: 20px;
+    margin-left: 20px;
+    
 
 }
 .input{
     width: 50px;
     background-color: yellowgreen;
     color: black;
-    padding: 5px;
+    padding: 7px;
     font-size:1.4rem ;
+    border-collapse: collapse;
 }
 .item{
     font-size: 1.5rem   ;
