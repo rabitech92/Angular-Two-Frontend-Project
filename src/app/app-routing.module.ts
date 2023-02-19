@@ -14,6 +14,7 @@ import { ShopComponent } from './admin/shop/shop.component';
 import { StockComponent } from './admin/stock/stock.component';
 import { UserComponent } from './admin/user/user.component';
 import { ViewinvoiceComponent } from './admin/viewinvoice/viewinvoice.component';
+import { CartComponent } from './component/cart/cart.component';
 import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { DelivaryComponent } from './component/delivary/delivary.component';
 import { LoginComponent } from './component/login/login.component';
@@ -28,6 +29,7 @@ const routes: Routes = [
   { path: 'product', component: ProductComponent },
   { path: 'home', component: HomeComponent },
   { path: 'print', component: ViewinvoiceComponent},
+  { path: 'cart', component: CartComponent},
   
   
   

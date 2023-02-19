@@ -60,6 +60,7 @@ import { InvoicesTotalComponent } from './components/invoices-total/invoices-tot
 import { HomeInvoiceComponent } from './components/home-invoice/home-invoice.component';
 import { MaininvoiceComponent } from './components/maininvoice/maininvoice.component';
 import { ViewinvoiceComponent } from './admin/viewinvoice/viewinvoice.component';
+import { CartComponent } from './component/cart/cart.component';
 
 
 
@@ -91,6 +92,7 @@ import { ViewinvoiceComponent } from './admin/viewinvoice/viewinvoice.component'
     HomeInvoiceComponent,
     MaininvoiceComponent,
     ViewinvoiceComponent,
+    CartComponent,
   
   
   
