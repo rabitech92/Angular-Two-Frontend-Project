@@ -1,15 +1,19 @@
 <div class="container bg-primary text-white text-center">
-    <strong></strong><h2>Product Register Form</h2><strong></strong>
+    <strong></strong>
+    <h2>Product Register Form</h2><strong></strong>
 </div>
-<form [formGroup]="formProduct" style="color: black;" (ngSubmit)="addProduct()" >
+<form [formGroup]="formProduct" style="color: black;" (ngSubmit)="addProduct()">
+
     <div class="row mb-3">
         <label class=" name col-2 d-flex justify-content-end">Product Name :</label>
         <input type="text" class="col-md-7" placeholder="Product Name" formControlName="pName">
     </div>
+
     <div class="row mb-3">
         <label class=" name col-2 d-flex justify-content-end">Product ID :</label>
         <input type="text" class="col-md-7" placeholder="Product Id" formControlName="pId">
     </div>
+
     <div class="row mb-3">
         <label for="PreoductType" class=" name col-2 d-flex justify-content-end"> Product Type :</label>
         <select name="custom-select" class="col-3" formControlName="pType">
@@ -29,8 +33,8 @@
             <option>Home Appliance</option>
             <option>Other</option>
             <option>other</option>
-
         </select>
+
         <label for="PreoductType" class=" name col-1 d-flex justify-content-end mb-@"> Product Brand :</label>
         <select name="custom-select" class="col-3" formControlName="pBrand">
             <option>Fruits And Vegetable</option>
@@ -49,40 +53,39 @@
             <option>Home Appliance</option>
             <option>Other</option>
             <option>other</option>
-
         </select>
 
 
     </div>
-        <div class="row mb-3">
-            <label class=" name col-2 d-flex justify-content-end">Product Quntity :</label>
-            <input type="number" class="col-md-7" placeholder="Product Quntity" formControlName="pQty">
-        </div>
+    <div class="row mb-3">
+        <label class=" name col-2 d-flex justify-content-end">Product Quntity :</label>
+        <input type="number" class="col-md-7" placeholder="Product Quntity" formControlName="pQty">
+    </div>
 
-        <div class="row mb-3">
-            <label class=" name col-2 d-flex justify-content-end">Product Price :</label>
-            <input type="number" class="col-md-7" placeholder="Product Price" formControlName="pInvPrice">
-        </div>
+    <div class="row mb-3">
+        <label class=" name col-2 d-flex justify-content-end">Product Price :</label>
+        <input type="number" class="col-md-7" placeholder="Product Price" formControlName="pInvPrice">
+    </div>
 
-        <div class="row mb-3">
-            <label class=" name col-2 d-flex justify-content-end">Selling Price :</label>
-            <input type="number" class="col-md-7" placeholder="Selling Price " formControlName="pSelPrice">
-        </div>
+    <div class="row mb-3">
+        <label class=" name col-2 d-flex justify-content-end">Selling Price :</label>
+        <input type="number" class="col-md-7" placeholder="Selling Price " formControlName="pSelPrice">
+    </div>
 
-        <div class="row mb-3">
-            <label class=" name col-2 d-flex justify-content-end">Suppliar Name :</label>
-            <input type="text" class="col-md-7" placeholder="Suppliar Name" formControlName="suppliarName">
+    <div class="row mb-3">
+        <label class=" name col-2 d-flex justify-content-end">Suppliar Name :</label>
+        <input type="text" class="col-md-7" placeholder="Suppliar Name" formControlName="suppliarName">
+    </div>
+    <div class="row mb-3">
+        <label class=" name col-2 d-flex justify-content-end">Suppliar Address :</label>
+        <input type="text" class="col-md-7" placeholder="Suppliar Address" formControlName="suppliarAddress">
+    </div>
+    <div class="container bg-light">
+        <div class="col-md-12 text-center">
+            <button type="submit" class="btn btn-primary">Submit</button>&nbsp;
+            <button type="reset" class="btn btn-warning">Cancel</button>
         </div>
-        <div class="row mb-3">
-            <label class=" name col-2 d-flex justify-content-end">Suppliar Address :</label>
-            <input type="text" class="col-md-7" placeholder="Suppliar Address" formControlName="suppliarAddress">
-        </div>
-        <div class="container bg-light">
-            <div class="col-md-12 text-center">
-                <button type="submit" class="btn btn-primary">Submit</button>&nbsp;
-                <button type="reset" class="btn btn-warning">Cancel</button>
-            </div>
-        </div>    
+    </div>
 </form>
 <div>
     <table class="table">
@@ -102,31 +105,22 @@
             </tr>
         </thead>
         <tbody>
-                <tr *ngFor="let por of product" class="mb-2">
-                  <td >{{por.id}}</td>
-                  <td> {{por.pName}}</td>
-                  <td>{{por.pId}}</td>
-                  <td >{{por.pType}}</td>
-                  <td>{{por.pBrand}}</td>
-                  <td>{{por.pQty}}</td>
-                  <td>{{por.pInvPrice}}</td>
-                  <td>{{por.pSelPrice}}</td>
-                  <td>{{por.suppliarName}}</td>
-                  <td>{{por.suppliarAddress}}</td>
-                  <td style="text-align: center;"> 
-                    <button class="btn btn-info" (click)="editProduct(por)">Update</button>&nbsp;
-                    <button class="btn btn-danger"(click)="deleteProduct(por)">Delete</button> 
+            <tr *ngFor="let pro of product" class="mb-2">
+                <td>{{pro.id}}</td>
+                <td> {{pro.pName}}</td>
+                <td>{{pro.pId}}</td>
+                <td>{{pro.pType}}</td>
+                <td>{{pro.pBrand}}</td>
+                <td>{{pro.pQty}}</td>
+                <td>{{pro.pInvPrice}}</td>
+                <td>{{pro.pSelPrice}}</td>
+                <td>{{pro.suppliarName}}</td>
+                <td>{{pro.suppliarAddress}}</td>
+                <td style="text-align: center;">
+                <button class="btn btn-info" (click)="editProduct(pro)">Update</button>&nbsp;
+                <button class="btn btn-danger" (click)="deleteProduct(pro)">Delete</button>
                 </td>
-                </tr>               
-              </tbody>
+            </tr>
+        </tbody>
     </table>
 </div>
-
-
-
-
-
-
-
-
-

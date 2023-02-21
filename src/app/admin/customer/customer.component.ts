@@ -26,7 +26,7 @@ export class CustomerComponent implements OnInit {
     });
     this.customerService.getAllCus().subscribe((data : addCustomer[])=>{
       this.custom=data;
-      console.log('All Data --',this.custom)
+      
     });
    }
     
@@ -65,9 +65,7 @@ export class CustomerComponent implements OnInit {
 
 }
 updateCus(){
-  console.log('Update--',this.addCustom.value)
-
-  this.customerService.updateCus(this.addCustom.value).subscribe(data=>{
+    this.customerService.updateCus(this.addCustom.value).subscribe(data=>{
   });
 }
 //  editcustom(cust:addCustomer){

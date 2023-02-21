@@ -1,5 +1,5 @@
 export class addProduct{
-        id:any;
+        id!:any;
         pName!:string;
         pId!:string;      
         pType!:string;
