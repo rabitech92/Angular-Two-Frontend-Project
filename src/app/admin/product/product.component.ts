@@ -20,7 +20,7 @@ export class ProductComponent implements OnInit {
 
   ngOnInit(): void {
    this.formProduct = new FormGroup({
-    id : new FormControl,
+    id : new FormControl(),
     pId : new FormControl('', [Validators.required]),
     pName :  new FormControl('', [Validators.required]),
     pType : new FormControl('', [Validators.required]),
@@ -45,6 +45,7 @@ export class ProductComponent implements OnInit {
     });
   }
   addProduct(){
+    console.log(this.formProduct.value)
     this.productService.createProd(this.formProduct.value).subscribe(data=>{
       this.ngOnInit();     
      });

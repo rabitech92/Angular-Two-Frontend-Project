@@ -22,7 +22,7 @@ export class ProductService {
     }
 
     getAllProd() {  
-      return this.http.get<addProduct[]>(this.baseUrl +"/getAllPod");  
+      return this.http.get<addProduct[]>(this.baseUrl +"/getAllPro");  
     } 
 
     deleteProd(id: any) {  

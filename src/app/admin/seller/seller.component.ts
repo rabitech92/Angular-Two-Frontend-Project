@@ -24,6 +24,7 @@ export class SellerComponent implements OnInit {
   
   ngOnInit(): void {
     this.addForm = new FormGroup({
+      id : new FormControl(),
       userType: new FormControl('', [Validators.required]),
       userName: new FormControl('', Validators.required),
       fatherName: new FormControl('', Validators.required),
@@ -50,10 +51,17 @@ export class SellerComponent implements OnInit {
   }
 
   addSeller(){
-    this.sellerService.createSell(this.addForm.value).subscribe(data=>{
+
+    if(this.addForm.value.id===null){    this.sellerService.createSell(this.addForm.value).subscribe(data=>{
       this.ngOnInit();
      
-     });
+     });} else{
+      this.sellerService.updateSell(this.addForm.value).subscribe(data =>{  
+     
+        this.ngOnInit();
+
+      } );
+     }
   }
 
 

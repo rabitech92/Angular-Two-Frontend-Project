@@ -29,7 +29,7 @@
               "node_modules/bootstrap-icons/font/bootstrap-icons.css",
               "src/styles.css"
             ],
-            "scripts": ["assets/myJsFile.js"]
+            "scripts": []
           },
           "configurations": {
             "production": {

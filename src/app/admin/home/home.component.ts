@@ -9,7 +9,5 @@ export class HomeComponent {
   
 
 
-  print(){
-    window.print()
-  }
+  
 }
