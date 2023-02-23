@@ -1,15 +1,15 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-admin',
+  templateUrl: './admin.component.html',
+  styleUrls: ['./admin.component.css']
 })
-export class AppComponent {
+export class AdminComponent {
   title = 'AngularFrontProject';
   sideBerOpen=true;
   sideBarToggler() {
     this.sideBerOpen = !this.sideBerOpen;
   }
-  
+
 }

@@ -1,4 +1,5 @@
 import { Component,EventEmitter, OnInit, Output } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,12 +10,21 @@ import { Router } from '@angular/router';
 export class HeaderComponent implements OnInit {
   @Output() toggleSidebarForMe: EventEmitter<any> = new EventEmitter();
 
+  addSingUp! :FormGroup[];
+
   constructor(private router: Router) {}
 
   ngOnInit(): void {}
 
   toggleSidebar() {
     this.toggleSidebarForMe.emit();
+    
   }
+  callSingup(){
+    this.addSingUp
+    }
+    
+    
+  
 }
 

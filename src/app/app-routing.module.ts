@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AccounceComponent } from './admin/accounce/accounce.component';
+import { AdminComponent } from './admin/admin/admin.component';
 import { CustomerComponent } from './admin/customer/customer.component';
 import { HomeComponent } from './admin/home/home.component';
 import { PaymentComponent } from './admin/payment/payment.component';
@@ -46,6 +47,7 @@ const routes: Routes = [
   {path :'payment', component:PaymentComponent},
   {path :'addinvoice', component:AddInvoiceComponent},
   {path :'invoice', component:InvoiceComponent},
+  {path :'admin', component:AdminComponent},
   
   
 

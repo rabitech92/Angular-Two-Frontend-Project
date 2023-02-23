@@ -61,6 +61,7 @@ import { HomeInvoiceComponent } from './components/home-invoice/home-invoice.com
 import { MaininvoiceComponent } from './components/maininvoice/maininvoice.component';
 import { ViewinvoiceComponent } from './admin/viewinvoice/viewinvoice.component';
 import { CartComponent } from './component/cart/cart.component';
+import { AdminComponent } from './admin/admin/admin.component';
 
 
 
@@ -94,6 +95,7 @@ import { CartComponent } from './component/cart/cart.component';
     MaininvoiceComponent,
     ViewinvoiceComponent,
     CartComponent,
+    AdminComponent,
    
   
   
