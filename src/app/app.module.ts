@@ -64,6 +64,7 @@ import { CartComponent } from './component/cart/cart.component';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -93,6 +94,7 @@ import { CartComponent } from './component/cart/cart.component';
     MaininvoiceComponent,
     ViewinvoiceComponent,
     CartComponent,
+   
   
   
   

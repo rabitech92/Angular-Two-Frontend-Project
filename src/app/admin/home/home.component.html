@@ -52,9 +52,17 @@
         </div>
         <p> هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى</p>
         <div class="btns">
-          <button>Add to Card</button>
+          <button >Add to Card</button>
           <button>View</button>
+          
         </div>
+        <div class="quantity-group">
+          <button (click)="handleQuantity('min')" >-</button>
+          <input type="button" value="{{foodQuantity}}" />
+          <button (click)="handleQuantity('plus')">+</button>
+
+      </div>
       </div>
     </div>
 
+    <app-footer></app-footer>
