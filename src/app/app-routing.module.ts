@@ -14,12 +14,13 @@ import { SellerComponent } from './admin/seller/seller.component';
 import { ShopComponent } from './admin/shop/shop.component';
 import { StockComponent } from './admin/stock/stock.component';
 import { UserComponent } from './admin/user/user.component';
-import { ViewinvoiceComponent } from './admin/viewinvoice/viewinvoice.component';
+
 import { CartComponent } from './component/cart/cart.component';
 import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { DelivaryComponent } from './component/delivary/delivary.component';
 import { LoginComponent } from './component/login/login.component';
 import { OrderComponent } from './component/order/order.component';
+import { ProductCatagoryComponent } from './component/product-catagory/product-catagory.component';
 import { AddInvoiceComponent } from './components/add-invoice/add-invoice.component';
 import { InvoiceComponent } from './components/invoice/invoice.component';
 
@@ -29,7 +30,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'product', component: ProductComponent },
   { path: 'home', component: HomeComponent },
-  { path: 'print', component: ViewinvoiceComponent},
+  { path: 'product-catagory', component: ProductCatagoryComponent },
+  
   { path: 'cart', component: CartComponent},
   
   

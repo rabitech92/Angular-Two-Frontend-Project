@@ -59,9 +59,10 @@ import { InvoiceComponent } from './components/invoice/invoice.component';
 import { InvoicesTotalComponent } from './components/invoices-total/invoices-total.component';
 import { HomeInvoiceComponent } from './components/home-invoice/home-invoice.component';
 import { MaininvoiceComponent } from './components/maininvoice/maininvoice.component';
-import { ViewinvoiceComponent } from './admin/viewinvoice/viewinvoice.component';
+
 import { CartComponent } from './component/cart/cart.component';
 import { AdminComponent } from './admin/admin/admin.component';
+import { ProductCatagoryComponent } from './component/product-catagory/product-catagory.component';
 
 
 
@@ -93,9 +94,10 @@ import { AdminComponent } from './admin/admin/admin.component';
     InvoicesTotalComponent,
     HomeInvoiceComponent,
     MaininvoiceComponent,
-    ViewinvoiceComponent,
+    
     CartComponent,
     AdminComponent,
+    ProductCatagoryComponent,
    
   
   
