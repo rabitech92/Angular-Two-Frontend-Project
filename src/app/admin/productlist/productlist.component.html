@@ -1,10 +1,80 @@
-<mat-drawer-container>
-    <mat-drawer mode="side" opened="true">
-      <!-- <mat-drawer mode="side" opened="true"> -->
-        <app-productheader ></app-productheader>
+<!-- <mat-drawer-container>
+    <mat-drawer mode="side" opened="true"> -->
+      <!-- <mat-drawer mode="side" opened="true"> Alwas comented ok-->
+        <!-- <app-productheader ></app-productheader>
           </mat-drawer>
     <mat-drawer-content>
         <app-sellerpanel></app-sellerpanel>
         <app-home></app-home>   
     </mat-drawer-content>
-  </mat-drawer-container>
+  </mat-drawer-container> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+
+  <div class="container">
+    <div class="box">
+      <div class="image">
+        <img alt="" border="0" height="130" width="130" src="assets/images/rangget.jpg" />
+      </div>
+      <div class="name_job">Mini Cut Rice</div>
+      <div class="rating">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="far fa-star"></i>
+        <i class="far fa-star"></i>
+        <i class="far fa-star"></i>
+      </div>
+      <p> </p>
+      <div class="btns">
+        <button>Add to Card</button>
+        <button>View</button>
+      </div>
+    </div>
+    <div class="box">
+      <div class="image">
+        <img alt="" border="0" height="130" width="130" src="assets/images/meat1.png" />
+      </div>
+      <div class="name_job">Meat</div>
+      <div class="rating">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="far fa-star"></i>
+        <i class="far fa-star"></i>
+      </div>
+      <p></p>
+      <div class="btns">
+        <button>Add to Card</button>
+        <button>View</button>
+      </div>
+    </div>
+    <div class="box">
+      <div class="image">
+        <img alt="" border="0" height="130" width="130" src="assets/images/pustiSoyaben.jpg" />
+      </div>
+      <div class="name_job">Pusti Oil</div>
+      <div class="rating">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="far fa-star"></i>
+      </div>
+      <p> </p>
+      <div class="btns">
+        <button>Add to Card</button>
+        <button>View</button>
+  
+      </div>
+      <div class="quantity-group">
+        <button (click)="handleQuantity('min')">-</button>
+        <input type="button" value="{{foodQuantity}}" />
+        <button (click)="handleQuantity('plus')">+</button>
+  
+      </div>
+    </div>
+    
+  </div>
+  
+  
+  
+  <app-footer></app-footer>

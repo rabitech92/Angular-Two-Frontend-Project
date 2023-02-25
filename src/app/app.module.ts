@@ -63,6 +63,7 @@ import { MaininvoiceComponent } from './components/maininvoice/maininvoice.compo
 import { CartComponent } from './component/cart/cart.component';
 import { AdminComponent } from './admin/admin/admin.component';
 import { ProductCatagoryComponent } from './component/product-catagory/product-catagory.component';
+import { ProductListDashboardComponent } from './admin/product-list-dashboard/product-list-dashboard.component';
 
 
 
@@ -98,6 +99,7 @@ import { ProductCatagoryComponent } from './component/product-catagory/product-c
     CartComponent,
     AdminComponent,
     ProductCatagoryComponent,
+    ProductListDashboardComponent,
    
   
   

@@ -1,0 +1,11 @@
+
+<app-header (toggleSidebarForMe)="sideBarToggler()"></app-header>
+<mat-drawer-container>
+    <mat-drawer mode="side" [opened]="sideBerOpen">
+        <app-product-catagory></app-product-catagory>
+    </mat-drawer>
+    <mat-drawer-content>    
+        <app-productlist></app-productlist>   
+    </mat-drawer-content>
+  </mat-drawer-container>
+
